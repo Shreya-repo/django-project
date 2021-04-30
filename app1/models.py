@@ -17,3 +17,25 @@ class Post(models.Model):
 
     def __str__(self):
         return self.title
+
+
+class Students(models.Model):
+    student_id = models.IntegerField(primary_key=True)
+    student_name = models.CharField(max_length=20)
+    student_DOB = models.DateTimeField(blank =True, null=True, default=timezone.now)
+    student_subjects = models.CharField(max_length = 20, blank =True, null=True)
+
+    def __str__(self):
+        return self.student_name
+
+class Teachers(models.Model):
+    teacher_name = models.CharField(max_length=20)
+    teacher_subject = models.CharField(max_length=20)
+    
+    def __str__(self):
+        return self.teacher_name
+
+
+
+
+
