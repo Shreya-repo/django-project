@@ -1,3 +1,13 @@
-{% for st in stu %}
-    <h2>{{ st.student_name }}</h2>
-{% endfor %}
+
+
+
+{% extends 'app1/base.html' %}
+{% block content %}
+    {% for st in stu %}
+        <article class="post">
+            
+            <h2><a href="{% url 'student_detail' pk=st.pk %}">{{ st.student_name }}</a></h2>
+            <p>{{ st.student_subjects|linebreaksbr }}</p>
+        </article>
+    {% endfor %}
+{% endblock %}
